@@ -23,7 +23,7 @@ tic;
 MSE=sum( (img64(:) - filtered1(:)).^2 ) / numel(img64);
 toc;
  tic;
-% MSE=sum((sum(img64-filtered1)).^2)/numel(img64);%error in parentheses
+% MSE=sum((sum(img64-filtered1)).^2)/numel(img64);
 MSE=sum(sum((img64-filtered1).^2))/numel(img64);
  toc
 fprintf('MSE = %f\n', MSE);
