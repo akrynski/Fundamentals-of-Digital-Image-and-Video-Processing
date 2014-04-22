@@ -1,3 +1,5 @@
+%W3Q7 my answer to question 7 of week's 3 homework at Coursera's Introduction to Image and Video Processing
+
 x=[1,0,0,0;1,0,0,0;2,1,0,1]
 %-----------------------------------
 % x =
