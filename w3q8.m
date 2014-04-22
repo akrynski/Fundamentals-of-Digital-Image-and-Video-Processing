@@ -1,3 +1,5 @@
+%W3Q8 my answer to question 8 of week's 3 homework at Coursera's Introduction to Image and Video Processing
+
 %-------------------load the imagge, convert it to double and scale to 0:1 array
 img64= im2double(imread('digital-images-week3_quizzes-original_quiz.jpg'));
 %--------------------------------down-sample the image------------------------------------
@@ -49,6 +51,11 @@ xlabel(sub,...
     {'So after convolution we have';' image up-sampled to original size'});
 ylabel(sub,['PSNR=',num2str(PSNR)]);
 %The result is MSE = 0.001522, PSNR = 28.18
-
-
-
+%-----------------------------show the spectrum of resulting image----------
+%subplot(236);
+%mesh(10*log10(abs(conv2(filtered2,filtered2))));%,axis image,title('spectrum of resulting image');
+psd = 10*log10(abs(fftshift(fft2(filtered2,512,512))).^2 ); %using abs shows module of fft /512-zero padding/
+%imagesc(psd),axis image,title('spectrum of resulting image');
+figure(2);
+mesh(psd),axis image,colormap(jet); colorbar;%colormap('hot');% try stem
+clear;
