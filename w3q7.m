@@ -1,8 +1,8 @@
 %W3Q7 my answer to question 7 of week's 3 homework at Coursera's Introduction to Image and Video Processing
-% X(k1,k2) is real
-% X(1,k2)=X(2,k2) for 0≤k2≤2
-% X(k1,0)=X(k1,2) for 0≤k1≤3	
-% X(k1,k2)=X(k2,k1) for 0≤k1,k2≤2
+% X(k1,k2) is real?
+% X(1,k2)=X(2,k2) for 0≤k2≤2?
+% X(k1,0)=X(k1,2) for 0≤k1≤3?
+% X(k1,k2)=X(k2,k1) for 0≤k1,k2≤2?
 % X(0,0)=6
 clear;clc;
 x=[1,0,0,0;1,0,0,0;2,1,0,1]
