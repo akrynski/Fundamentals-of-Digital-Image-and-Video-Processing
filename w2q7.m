@@ -58,3 +58,14 @@ fprintf('SSIM = %.2f\n', ssimval);
 subplot(2,3,6);
 imagesc(ssimmap),axis image;
 title(sprintf('ssim Index Map\n - Mean ssim Value is %0.4f',ssimval));
+
+
+>>Elapsed time is 0.004722 seconds.
+>>Elapsed time is 0.000477 seconds.
+>>Elapsed time is 0.000308 seconds.
+>>MSE = 0.001176
+>>PSNR = 29.30
+>>MSE = 0.002671
+>>PSNR = 25.73
+>>SSIM = 0.90
+>>SSIM = 0.79
