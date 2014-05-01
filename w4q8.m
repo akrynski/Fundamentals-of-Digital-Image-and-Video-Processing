@@ -1,5 +1,8 @@
-%W4Q8  my homework of block matching motion estimation between two consecutive video frames
+%%W4Q8  my homework of block matching motion estimation 
+%between two consecutive video frames
+%%
 clear;
+set(0,'DefaultFigureWindowStyle','docked');
 I_1=double(imread('digital-images-week4_quizzes-frame_1.jpg'));
 I_2=double(imread('digital-images-week4_quizzes-frame_2.jpg'));
 B_target=I_2(65:96,81:112);
@@ -11,8 +14,10 @@ Mmin = 1;
 Nmin = 1;
 for m=1:size(I_1,1)-31
     for n=1:size(I_1,2)-31
-        B_source=I_1(m:m+31,n:n+31);
-        MAE=sum(abs(B_target(:)-B_source(:)))/MxN;
+            B_source=I_1(m:m+31,n:n+31);
+            MAE=sum(abs(B_target(:)-B_source(:)))/MxN;
+           % MAE=mean(abs(B_target(:)-B_source(:)));
+            %MAE=sum(sum(abs(B_target-B_source)))/MxN;
         if(MAE<MAE_min)
             MAE_min=MAE;
             Mmin=m;
@@ -21,7 +26,7 @@ for m=1:size(I_1,1)-31
         end
     end
 end
-fprintf('MAE at location (%d,%d) equals to %f\n',Mmin,Nmin,MAE_min);
+fprintf('MAE at location (%d,%d) equals to %.2f\n',Mmin,Nmin,MAE_min);
 figure;
 subplot(141);
 imagesc(I_1),axis image,colormap(gray),title('frame 1');
@@ -35,4 +40,5 @@ subplot(144);
 [ssimval,ssimmap]=ssim(B_face,B_target);
 imagesc(ssimmap),axis image,colormap(gray),title('difference found (ssim-map)');
 fprintf('ssimval=%f\n',ssimval);
-
+% MAE at location (65,81) equals to 22.985352
+% ssimval=0.564774
